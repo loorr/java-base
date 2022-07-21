@@ -23,5 +23,7 @@ public class Array {
         for (int i = 0; i < arr5.length; i++) {
             System.out.println(arr5[i]);
         }
+
+
     }
 }
