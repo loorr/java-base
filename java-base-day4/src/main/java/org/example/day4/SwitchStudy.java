@@ -11,7 +11,7 @@ public class SwitchStudy {
                 System.out.println("2");
                 break;
             case 3:
-                System.out.println("3000");
+                System.out.println("300");
                 break;
             default:
                 System.out.println("default");
