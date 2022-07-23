@@ -5,6 +5,8 @@ public class Array {
         // [0,0,0,0,0,0,0,0,0,0]
         int[] arr = new int[10];
 
+        int len = arr.length;
+
         String[] arr3 = new String[10];
         Object[] arr4 = new Object[10];
         // 越界

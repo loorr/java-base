@@ -3,6 +3,7 @@ package org.example.day4;
 public class SwitchStudy {
     public static void main(String[] args) {
         int a = 1;
+
         switch (a) {
             case 1:
                 System.out.println("1");

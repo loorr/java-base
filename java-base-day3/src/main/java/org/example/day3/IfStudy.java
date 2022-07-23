@@ -8,6 +8,7 @@ public class IfStudy {
         int age = scanner.nextInt();
 
         if(age > 18){
+            int age2 = age - 18;
             System.out.println("成年");
         }else {
             System.out.println("未成年");
@@ -20,8 +21,5 @@ public class IfStudy {
         }else if( age>60 ){
             System.out.println("老年");
         }
-
-
-
     }
 }
