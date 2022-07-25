@@ -1,15 +1,64 @@
 package org.example.day6.atm;
 
-import java.util.Random;
+import java.util.*;
 
 public class AccountManager {
-    public static Account[] accounts = new Account[100];
+     public static Account[] accounts = new Account[100];
+//    public static final List<Account> accounts = new ArrayList<>();
+
     public static int currentAccountIndex = 0;
     public static Account currentAccount = null;
+
+    private void privateMethod(String str) {
+        System.out.println("private method" + str);
+    }
+
+    private static void privateStaticMethod(String str) {
+        System.out.println("private method" + str);
+    }
+
+    public void test() {
+        // 申明
+        List<Integer> list = new ArrayList<>();
+        Integer[] arr = new Integer[10];
+
+        // 取值
+        // arr[index]
+        //list.get(index)
+
+        // 赋值
+        // arr[index] = value
+        // list.add(value); 存最末尾
+        // list.add(index, value); // 存指定位置
+
+
+        // 判断是否包含
+//        for (int i = 0; i < list.size(); i++) {
+//            if (list.get(i) == value) {
+//                System.out.println("包含");
+//            }
+//        }
+        //list.contains(value);
+
+
+
+//        List<Long> list = new ArrayList<>();
+//        List<Double> list = new ArrayList<>();
+//        List<String> list = new ArrayList<>();
+//
+//        Set<String> set = new HashSet<>();
+//        Set<String> set1 = new TreeSet<>();
+//
+//        Map<String, Account> map = new HashMap<>();
+    }
 
     public static Account openAccount(String username, String password, String checkPassword) {
         if (!password.equals(checkPassword)) {
             System.out.println("两次输入的密码不一致");
+            return null;
+        }
+        if (username == null || username.length() == 0){
+            System.out.println("用户名不能为空");
             return null;
         }
         Account account = new Account();
