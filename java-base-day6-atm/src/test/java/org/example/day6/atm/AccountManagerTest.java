@@ -5,8 +5,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.powermock.reflect.Whitebox;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -44,7 +47,6 @@ class AccountManagerTest {
         assertNotNull(account);
         assertNotNull(account.accountId);
         AccountManager.loginAccount("张三", "123456");
-
         AccountManager.deposit(100);
         assertEquals(100, account.balance);
     }
@@ -65,6 +67,7 @@ class AccountManagerTest {
         try {
             Class<?> clazz = Class.forName(AccountManager.class.getName());
             AccountManager manager = (AccountManager) clazz.newInstance();
+
             Method method = clazz.getDeclaredMethod("privateMethod", String.class);
             method.setAccessible(true);
             method.invoke(manager," hi");
@@ -82,7 +85,7 @@ class AccountManagerTest {
     @Test
     void privateStaticTest(){
         try {
-            Class<?> clazz = Class.forName(AccountManager.class.getName());
+            Class<?> clazz = Class.forName("org.example.day6.atm" + ".AccountManager");
             Method method = clazz.getDeclaredMethod("privateStaticMethod", String.class);
             method.setAccessible(true);
             method.invoke(clazz," hi");
@@ -94,6 +97,24 @@ class AccountManagerTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    void test() {
+        Class<?> clazz = AccountManager.class;
+        System.out.println(clazz.getName());
+        System.out.println(Arrays.stream(clazz.getFields()).map(Field::getName).collect(Collectors.toList()));
+        System.out.println(Arrays.stream(clazz.getMethods()).map(Method::getName).collect(Collectors.toList()));
+
+        try {
+            Field field = clazz.getField("currentAccountIndex ");
+            field.setAccessible(true);
+
+            System.out.println(field.getName() + " " + field.getInt(null));
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @Test
     void privateStaticTestByPowerMock(){

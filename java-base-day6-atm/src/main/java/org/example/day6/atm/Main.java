@@ -1,5 +1,7 @@
 package org.example.day6.atm;
 
+import org.example.day6.atm.exception.NoAccountException;
+
 import java.util.Scanner;
 
 public class Main {
@@ -46,13 +48,17 @@ public class Main {
                 String accountId = in.next();
                 System.out.println("请输入 密码: ");
                 String pwd = in.next();
-                boolean isLogin = AccountManager.loginAccount(accountId, pwd);
-                if (isLogin) {
-                    System.out.println("登录成功!!!");
-                    printUserMenu();
-                }else {
-                    System.out.println("登录失败!!!");
-                    printMainMenu();
+                try {
+                    boolean isLogin = AccountManager.loginAccount(accountId, pwd);
+                    if (isLogin) {
+                        System.out.println("登录成功!!!");
+                        printUserMenu();
+                    }else {
+                        System.out.println("登录失败!!!");
+                        printMainMenu();
+                    }
+                }catch (NoAccountException e){
+                    System.out.println(e.getMessage());
                 }
                 break;
             case 3:
