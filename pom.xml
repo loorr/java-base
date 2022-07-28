@@ -17,6 +17,7 @@
         <module>java-base-day6-atm</module>
         <module>java-base-day8-collection</module>
         <module>java-base-day9</module>
+        <module>java-base-day10</module>
     </modules>
 
     <properties>
