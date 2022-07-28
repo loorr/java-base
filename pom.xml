@@ -18,6 +18,8 @@
         <module>java-base-day8-collection</module>
         <module>java-base-day9</module>
         <module>java-base-day10</module>
+        <module>java-base-concurrent</module>
+        <module>java-base-chatroom</module>
     </modules>
 
     <properties>

@@ -28,7 +28,9 @@ public class StreamStudy {
 
         // 排序
         list1.stream()
-                .sorted((o1, o2) -> o2-o1)
+                .sorted((o1, o2) -> {
+                   return o2-o1;
+                })
                 .filter(o -> o > 1)
                 .distinct()
                 .forEach(o -> {
