@@ -20,6 +20,7 @@
         <module>java-base-day10</module>
         <module>java-base-concurrent</module>
         <module>java-base-chatroom</module>
+        <module>java-base-data-stuc</module>
     </modules>
 
     <properties>

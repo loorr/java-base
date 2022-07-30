@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 public class BlockingQueueExample {
     private static Integer count = 0;
     //创建一个阻塞队列
-    private static final BlockingQueue blockingQueue = new ArrayBlockingQueue<>(10);
+    private static final BlockingQueue<Integer> blockingQueue = new ArrayBlockingQueue<>(10);
 
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
@@ -36,6 +36,7 @@ public class BlockingQueueExample {
             }
         }
     }
+
     static class Consumer implements Runnable {
         @Override
         public void run() {
@@ -46,7 +47,7 @@ public class BlockingQueueExample {
                     e1.printStackTrace();
                 }
                 try {
-                    blockingQueue.take();
+                    Integer a = blockingQueue.take();
                     count--;
                     System.out.println(Thread.currentThread().getName()
                             + "消费者消费，目前总共有" + count);

@@ -27,6 +27,9 @@ public class ExceptionStudy {
 //        System.out.println(result);
         try {
             test3(2);
+            test3(3);
+            test3(4);
+            test3(5);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

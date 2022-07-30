@@ -1,7 +1,6 @@
 package org.example.concurrent;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 public class ExecutorExample {
     public static void main(String[] args) {
@@ -17,6 +16,10 @@ public class ExecutorExample {
         // ExecutorService executor3 = Executors.newScheduledThreadPool(5);
 
         ExecutorService executors = Executors.newFixedThreadPool(5);
+        ExecutorService executor1 = new ThreadPoolExecutor(8,8,
+                0L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<Runnable>());
+
         executors.submit(() -> {
             System.out.println("hello1");
         });

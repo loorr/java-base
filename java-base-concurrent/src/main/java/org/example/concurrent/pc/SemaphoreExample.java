@@ -12,6 +12,7 @@ public class SemaphoreExample {
     private static final Semaphore mutex = new Semaphore(1);
 
     public static void main(String[] args) {
+
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         executorService.submit(new BlockingQueueExample.Producer());
         executorService.submit(new BlockingQueueExample.Consumer());
