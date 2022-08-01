@@ -8,7 +8,7 @@ public class LFU implements Cache{
     private Map<Integer, Integer> map = new HashMap<>();
     private PriorityQueue<Integer> queue;
 
-    public  LFU(int capacity) {
+    public LFU(int capacity) {
         queue = new PriorityQueue<>(capacity, (a, b) -> map.getOrDefault(b, 0) - map.getOrDefault(a, 0));
     }
 

@@ -48,12 +48,12 @@ public class BinaryTree {
             preOrderTraverse1(root.left);
             preOrderTraverse1(root.right);
         }
-
     }
 
     // 根结点 ---> 左子树 ---> 右子树
     public void preOrderTraverse2(BinaryTreeNode root) {
         Stack<BinaryTreeNode> stack = new Stack<>();
+
         BinaryTreeNode pNode = root;
         while (pNode != null || !stack.isEmpty()) {
             if (pNode != null) {

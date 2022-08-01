@@ -43,11 +43,11 @@ public class GraphByAdjacencyList {
             return;
         }
         System.out.print(start.val + " ");
+        visited.add(start);
         for (GraphNode neighbor : start.neighbors) {
             if (!visited.contains(neighbor)) {
                 dfs(graphNodeList, neighbor, visited);
             }
-            visited.add(start);
         }
     }
 

@@ -1,11 +1,18 @@
 package org.example.data.algorithm;
 
+import java.util.Arrays;
+
 public class QuickSort {
     public static void main(String[] args) {
         int[] arr = {1, 2, 17, 14, 5, 6, 17, 8, 9, 10};
         quickSort(arr, 0, arr.length - 1);
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
+        }
+        int[] arr1 = {1, 2, 17, 14, 5, 6, 17, 8, 9, 10};
+        Arrays.sort(arr1);
+        for (int i = 0; i < arr1.length; i++) {
+            System.out.print(arr1[i] + " ");
         }
     }
 

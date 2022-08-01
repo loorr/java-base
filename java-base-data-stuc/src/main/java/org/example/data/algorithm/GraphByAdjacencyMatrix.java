@@ -36,6 +36,7 @@ public class GraphByAdjacencyMatrix {
             if (arr[i][j] == 1 && visited[i][j] == 0) {
                 System.out.println(i +  "->"+ j);
                 visited[i][j] = 1;
+                visited[j][i] = 1;
                 dfs(arr, j, visited);
             }
         }
